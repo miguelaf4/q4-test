@@ -2,8 +2,21 @@
   box-sizing: border-box;
 }
 
+:root {
+  --bg-color: #2A3035;;
+  --dark: #23272A;
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+figure, p {
+  margin: 0;
+}
+
 #q4Wrapper {
-  background-color: #2A3035;
+  background-color: var(--bg-color);
   font-family: "Roboto", sans-serif;
   color: white;
 }
@@ -28,6 +41,10 @@
   margin-top: 10px;
   padding: 10px;
   border-radius: 5px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 #q4Wrapper article {
   text-align: center;
@@ -38,6 +55,9 @@
 #q4Wrapper a {
   display: inline-block;
   text-decoration: none;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
   color: white;
   transition: transform 0.3s ease;
 }
@@ -46,6 +66,10 @@
 }
 #q4Wrapper a span {
   opacity: 0.5;
+}
+
+#q4Wrapper a span div {
+    display: inline;
 }
 
 .layout_inner {
@@ -60,5 +84,17 @@
 
 /* Begin styling the report items here! */
 .reports {
-
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
 }
+
+
+
+@media (max-width: 768px){
+  .reports {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
